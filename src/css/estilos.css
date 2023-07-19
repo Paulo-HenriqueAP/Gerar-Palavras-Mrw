@@ -1,0 +1,77 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+button:hover {
+    cursor: copy;
+    filter: brightness(90%);
+  }
+
+#palavraPC {
+    position: absolute;
+    text-align: center;
+    background-color: darkgray;
+    bottom: 50%;
+    width: 100%;
+}
+
+#palavraMob {
+    position: absolute;
+    text-align: center;
+    background-color: whitesmoke;
+    bottom: 50%;
+    width: 100%;
+}
+
+#copiarPC {
+    border: none;
+    position: fixed;
+    right: 0%;
+    width: 15%;
+    height: 49.9%;
+    top: 0%;
+    background-color: darkgray;
+    box-shadow: 10px 10px 10px 10px black;
+}
+
+#copiarMob {
+    border: none;
+    position: fixed;
+    right: 0%;
+    width: 15%;
+    height: 49.9%;
+    bottom: 0%;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 10px 10px black;
+}
+
+.telaPC {
+    position: fixed;
+    background-color: wheat;
+    height: 49.9%;
+    width: 85%;
+    left: 0%;
+    top: 0%;
+}
+
+.telaMob {
+    position: fixed;
+    background-color: steelblue;
+    height: 49.9%;
+    width: 85%;
+    left: 0%;
+    bottom: 0%;
+}
+
+.link {
+    width: 85%;
+    position: absolute;
+    color: black;
+    text-align: center;
+    font-family: sans-serif;
+    bottom: 1%;
+    font-size: small;
+    text-decoration: none;
+}
+
