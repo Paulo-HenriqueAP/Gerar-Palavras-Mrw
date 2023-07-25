@@ -1,27 +1,32 @@
 body {
     margin: 0;
     background-color: black;
+    font-family: monospace;
 }
 
 button:hover {
     cursor: copy;
     filter: brightness(90%);
-  }
+}
 
 #palavraPC {
     position: absolute;
-    text-align: center;
+    word-wrap: break-word;
     background-color: darkgray;
     bottom: 50%;
     width: 100%;
+    text-align: center;
+    font-size: xx-small;
 }
 
 #palavraMob {
     position: absolute;
+    word-wrap: break-word;
     text-align: center;
     background-color: whitesmoke;
     bottom: 50%;
     width: 100%;
+    font-size: xx-small;
 }
 
 #copiarPC {
@@ -65,13 +70,91 @@ button:hover {
 }
 
 .link {
-    width: 85%;
     position: absolute;
     color: black;
-    text-align: center;
     font-family: sans-serif;
     bottom: 1%;
-    font-size: small;
+    font-size: x-small;
     text-decoration: none;
+    left: 0%;
+    box-shadow:  0.5px 0.5px;
+    padding: 5px;
 }
 
+#config {
+    position: absolute;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-size: X-small;
+}
+
+#configLista {
+    position: absolute;
+    list-style: square;
+    list-style: none;
+    padding: 0%;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
+li {
+    margin: 5px;
+}
+
+ul {
+    background-color: black;
+    color: whitesmoke;
+    text-align: center;
+    border-radius: 2px;
+}
+
+#padrao,
+#letras,
+#numeros,
+#letras_numeros,
+#alf {
+    border-radius: 2px;
+    width: 100%;
+    font-family: monospace;
+    cursor: pointer;
+    font-size: small;
+    border: none;
+}
+
+#padrao {
+    background-color: white;
+}
+
+#letras {
+    background-color: tomato;
+}
+
+#numeros {
+    background-color: yellow;
+}
+
+#letras_numeros {
+    background-color: red;
+}
+
+#alf {
+    background-color: aquamarine;
+}
+
+.hidden {
+    display: none;
+}
+
+#Qp,
+#Qm {
+    font-size: xx-small;
+    width: 60px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+    background-color: snow;
+    padding: 0%;
+}
