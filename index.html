@@ -11,23 +11,23 @@
 
 <body>
 
-    <div class="telaPC">
+    <div id="telaPC" class="corP">
         <span id="palavraPC"></span>
         <button id="copiarPC">⧉ 🖥️</button>
         <!--config -->
         <button id="config">☰</button>
         <ul id="configLista" class="hidden">⚞somente⚟
-            <li><button id="padrao">tudo</button></li>
+            <li><Button id="letras_numeros">letras e números</Button></li>
             <li><Button id="letras">letras</Button></li>
             <li><Button id="numeros">números</Button></li>
-            <li><Button id="letras_numeros">letras e números</Button></li>
+            <li><button id="padrao">diversos</button></li>
             <li><Button id="alf">alfabetos</Button></li>
             <input id="Qp" placeholder="quant PC" onchange="numeroTrocadoPC()" type="number" min="0"> 
             <input id="Qm" placeholder="quant MOB" onchange="numeroTrocadoMob()" type="number" min="0">
         </ul>
     </div>
 
-    <div class="telaMob">
+    <div id="telaMob" class="corM">
         <span id="palavraMob"></span>
         <button id="copiarMob">⧉ 📱</button>
     </div>

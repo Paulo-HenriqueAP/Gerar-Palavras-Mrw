@@ -36,7 +36,7 @@ button:hover {
     width: 15%;
     height: 49.9%;
     top: 0%;
-    background-color: darkgray;
+   background-color: darkgrey;
     box-shadow: 10px 10px 10px 10px black;
 }
 
@@ -51,18 +51,17 @@ button:hover {
     box-shadow: 10px 10px 10px 10px black;
 }
 
-.telaPC {
+#telaPC {
     position: fixed;
-    background-color: wheat;
     height: 49.9%;
     width: 85%;
     left: 0%;
     top: 0%;
 }
 
-.telaMob {
+#telaMob {
     position: fixed;
-    background-color: steelblue;
+
     height: 49.9%;
     width: 85%;
     left: 0%;
@@ -72,13 +71,14 @@ button:hover {
 .link {
     position: absolute;
     color: black;
-    font-family: sans-serif;
+    font-family: monospace;
     bottom: 1%;
     font-size: x-small;
     text-decoration: none;
     left: 0%;
-    box-shadow:  0.5px 0.5px;
+    box-shadow: 0.5px 0.5px;
     padding: 5px;
+    opacity: 75%;
 }
 
 #config {
@@ -125,7 +125,7 @@ ul {
 }
 
 #padrao {
-    background-color: white;
+    background-color: red;
 }
 
 #letras {
@@ -137,7 +137,7 @@ ul {
 }
 
 #letras_numeros {
-    background-color: red;
+    background-color: white;
 }
 
 #alf {
@@ -157,4 +157,47 @@ ul {
     border-radius: 2px;
     background-color: snow;
     padding: 0%;
+}
+
+
+.letrasNumerosPCor {
+    background-color: wheat;
+}
+
+.letrasPCor {
+    background-color: tan;
+}
+
+.numerosPCor {
+    background-color: gold;
+}
+
+.diversosPCor {
+    background-color: orangered;
+}
+
+.alfabetosPCor {
+    background-color: springgreen;
+}
+
+
+.letrasNumerosMCor {
+    background-color: steelblue;
+}
+
+.letrasMCor {
+    background-color: coral;
+}
+
+.numerosMCor {
+    background-color: palegoldenrod;
+
+}
+
+.diversosMCor {
+    background-color: crimson;
+}
+
+.alfabetosMCor {
+    background-color: turquoise;
 }
