@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: black;
     font-family: monospace;
+    user-select: none;
 }
 
 button:hover {
@@ -9,32 +10,50 @@ button:hover {
     filter: brightness(90%);
 }
 
+#AP {
+    position: fixed;
+    width: 15%;
+    right: 0%;
+    text-align: center;
+}
+
+#AP:hover {
+    background-color: aliceblue;
+    color: black;
+}
+
+.APl {
+    background-color: darkgray;
+    color: darkgray;
+}
+
+.APc {
+    background-color: #50C878;
+    color: #50C878;
+}
+
 #palavraPC {
     position: absolute;
     word-wrap: break-word;
-    text-align: center;
     font-size: medium;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     width: 100%;
     height: 100%;
     background-color: transparent;
+    user-select: text;
+    cursor: text;
+    border: none;
 }
 
 #palavraMob {
     position: absolute;
     word-wrap: break-word;
-    text-align: center;
     font-size: medium;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
     width: 100%;
     height: 100%;
     background-color: transparent;
+    user-select: text;
+    cursor: text;
+    border: none;
 }
 
 #copiarPC {
@@ -42,8 +61,7 @@ button:hover {
     position: fixed;
     right: 0%;
     width: 15%;
-    height: 49.9%;
-    top: 0%;
+    height: 49%;
     background-color: darkgrey;
     box-shadow: 10px 10px 10px 10px black;
 }
@@ -53,7 +71,7 @@ button:hover {
     position: fixed;
     right: 0%;
     width: 15%;
-    height: 49.9%;
+    height: 49%;
     bottom: 0%;
     background-color: whitesmoke;
     box-shadow: 10px 10px 10px 10px black;
@@ -64,8 +82,8 @@ button:hover {
     height: 49.9%;
     width: 85%;
     left: 0%;
-    top: 0%;
-    max-height: 49.9;
+    top: 15px;
+    max-height: 49%;
     word-break: break-all;
     max-width: 85%;
     overflow: auto;
@@ -73,11 +91,11 @@ button:hover {
 
 #telaMob {
     position: fixed;
-    height: 49.9%;
+    height: 49%;
     width: 85%;
     left: 0%;
     bottom: 0%;
-    max-height: 49.9%;
+    max-height: 49%;
     word-break: break-all;
     max-width: 85%;
     overflow: auto;
@@ -103,17 +121,18 @@ button:hover {
     color: white;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 85%;
     font-size: X-small;
+    top: 0;
+    height: 15px;
 }
 
 #configLista {
     position: absolute;
-    list-style: square;
     list-style: none;
     padding: 0%;
     transform: translateX(-50%);
-    left: 50%;
+    left: 42.5%;
 }
 
 li {
@@ -136,7 +155,7 @@ ul {
     width: 100%;
     font-family: monospace;
     cursor: pointer;
-    font-size: small;
+    font-size: x-small;
     border: none;
 }
 
@@ -175,6 +194,11 @@ ul {
     text-align: center;
 }
 
+.bloquear {
+    pointer-events: none;
+    background-color: red;
+    color: black;
+}
 
 .letrasNumerosPCor {
     background-color: wheat;

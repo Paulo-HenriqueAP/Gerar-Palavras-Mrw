@@ -782,6 +782,7 @@ function limpar() {
     espacoPalavraPC.textContent = "";
     espacoPalavraMob.textContent = "";
 
+    document.getElementById("AP").classList.remove("APc")
     copiarComputador.style = " background-color: darkgray;"
 
     copiarMobile.style = "background-color: whitesmoke;";
@@ -852,6 +853,7 @@ document.getElementById("alf").addEventListener("click", () => {
 function numeroTrocadoPC() {
     cont = 0;
     espacoPalavraPC.textContent = "";
+    document.getElementById("AP").classList.remove("APc")
     copiarComputador.style = " background-color: darkgray;";
     numeroP = document.getElementById("Qp").value;
     abaixarP = numeroP
@@ -859,7 +861,7 @@ function numeroTrocadoPC() {
     switch (document.getElementById("Qp").value) {
         case "":
             numeroP = 30
-        break;
+            break;
     }
     definirPC();
 };
@@ -873,7 +875,7 @@ function numeroTrocadoMob() {
     switch (document.getElementById("Qm").value) {
         case "":
             numeroM = 50;
-        break;
+            break;
     }
     definirMob();
 };
@@ -910,9 +912,12 @@ copiarComputador.addEventListener("click", function () {
     copiarPalavra(palavraGeradaParaPC);
     copiarComputador.textContent = "Copiado!";
     copiarComputador.style = "background-color: #50C878; font-size: xx-small;";
+    document.getElementById("AP").classList.add("APc")
+    document.getElementById("configLista").classList.add("bloquear")
     setTimeout(function () {
         copiarComputador.textContent = "⧉ 🖥️"
         copiarComputador.style = "background-color: #50C878; font-size: small;";
+        document.getElementById("configLista").classList.remove("bloquear")
     }, 2000);
 });
 
