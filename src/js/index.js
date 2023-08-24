@@ -771,87 +771,6 @@ let corFundoMob = document.getElementById("telaMob")
 corFundoPC.classList.add("letrasNumerosPCor");
 corFundoMob.classList.add("letrasNumerosMCor");
 
-function abaixarTpc() {
-    let abaixarTexto = 50;
-
-    while (abaixarP >= 15000) {
-        abaixarP = 0;
-        espacoPalavraPC.style.bottom = "0%";
-        espacoPalavraPC.style.fontSize = "0.5px";
-    };
-
-    while (abaixarP >= 10000) {
-        abaixarP = 0;
-        espacoPalavraPC.style.bottom = "30%";
-        espacoPalavraPC.style.fontSize = "1px";
-    };
-
-    while (abaixarP >= 6000) {
-        abaixarP = 0;
-        espacoPalavraPC.style.bottom = "30%";
-        espacoPalavraPC.style.fontSize = "1.5px";
-    };
-
-    while (abaixarP >= 1500) {
-        abaixarP = 0;
-        espacoPalavraPC.style.bottom = "30%";
-        espacoPalavraPC.style.fontSize = "3px";
-    };
-
-    while (abaixarP >= 700) {
-        abaixarP = 0;
-        espacoPalavraPC.style.bottom = "0%";
-        espacoPalavraPC.style.fontSize = "10%";
-    };
-
-    while (abaixarP > 100) {
-        espacoPalavraPC.style.bottom = abaixarTexto + "%";
-        abaixarTexto -= 10;
-        abaixarP -= 100;
-    };
-};
-
-function abaixarTmb() {
-    let abaixarTextoM = 50;
-
-    while (abaixarM >= 15000) {
-        abaixarM = 0;
-        espacoPalavraMob.style.bottom = "0%";
-        espacoPalavraMob.style.fontSize = "0.5px";
-    };
-
-    while (abaixarP >= 10000) {
-        abaixarM = 0;
-        espacoPalavraMob.style.bottom = "30%";
-        espacoPalavraMob.style.fontSize = "1px";
-    };
-
-    while (abaixarM >= 6000) {
-        abaixarM = 0;
-        espacoPalavraMob.style.bottom = "30%";
-        espacoPalavraMob.style.fontSize = "1.5px";
-    };
-
-    while (abaixarM >= 1500) {
-        abaixarM = 0;
-        espacoPalavraMob.style.bottom = "30%";
-        espacoPalavraMob.style.fontSize = "3px";
-    };
-
-    while (abaixarM >= 700) {
-        abaixarM = 0;
-        espacoPalavraMob.style.bottom = "0%";
-        espacoPalavraMob.style.fontSize = "10%";
-    };
-
-    while (abaixarM > 100) {
-        espacoPalavraMob.style.bottom = abaixarTextoM + "%";
-        abaixarTextoM -= 10;
-        abaixarM -= 100;
-    };
-};
-
-
 function definirCaractereAleatorio() {
     cont++;
     cta = (vetor[(Math.floor(Math.random() * vetor.length))]);
@@ -894,7 +813,6 @@ document.getElementById("letras_numeros").addEventListener("click", () => {
     definirMob();
 });
 
-
 document.getElementById("letras").addEventListener("click", () => {
     limpar();
     corFundoPC.classList.add("letrasPCor");
@@ -935,9 +853,14 @@ function numeroTrocadoPC() {
     cont = 0;
     espacoPalavraPC.textContent = "";
     copiarComputador.style = " background-color: darkgray;";
-    espacoPalavraPC.style = " background-color: darkgray;";
     numeroP = document.getElementById("Qp").value;
     abaixarP = numeroP
+
+    switch (document.getElementById("Qp").value) {
+        case "":
+            numeroP = 30
+        break;
+    }
     definirPC();
 };
 
@@ -945,9 +868,13 @@ function numeroTrocadoMob() {
     cont = 0;
     espacoPalavraMob.textContent = "";
     copiarMobile.style = "background-color: whitesmoke;";
-    espacoPalavraMob.style = "background-color: whitesmoke;";
     numeroM = document.getElementById("Qm").value;
     abaixarM = numeroM
+    switch (document.getElementById("Qm").value) {
+        case "":
+            numeroM = 50;
+        break;
+    }
     definirMob();
 };
 
@@ -966,7 +893,6 @@ function definirPC() {
         definirCaractereAleatorio()
         espacoPalavraPC.textContent += cta
     };
-    abaixarTpc()
 };
 
 function definirMob() {
@@ -974,7 +900,6 @@ function definirMob() {
         definirCaractereAleatorio()
         espacoPalavraMob.textContent += cta
     };
-    abaixarTmb()
 };
 
 definirPC();
@@ -984,9 +909,10 @@ copiarComputador.addEventListener("click", function () {
     palavraGeradaParaPC = espacoPalavraPC.textContent;
     copiarPalavra(palavraGeradaParaPC);
     copiarComputador.textContent = "Copiado!";
-    copiarComputador.style = "background-color: #50C878;";
+    copiarComputador.style = "background-color: #50C878; font-size: xx-small;";
     setTimeout(function () {
-        copiarComputador.textContent = "📋 🖥️"
+        copiarComputador.textContent = "⧉ 🖥️"
+        copiarComputador.style = "background-color: #50C878; font-size: small;";
     }, 2000);
 });
 
@@ -994,9 +920,10 @@ copiarMobile.addEventListener("click", function () {
     palavraGeradaParaMobile = espacoPalavraMob.textContent;
     copiarPalavra(palavraGeradaParaMobile);
     copiarMobile.textContent = "Copiado!";
-    copiarMobile.style = "background-color: #50c896;";
+    copiarMobile.style = "background-color: #50c896; font-size: xx-small;";
     setTimeout(function () {
-        copiarMobile.textContent = "📋 📱"
+        copiarMobile.textContent = "⧉ 📱"
+        copiarMobile.style = "background-color: #50c896; font-size: small;";
     }, 2000);
 });
 

@@ -12,21 +12,29 @@ button:hover {
 #palavraPC {
     position: absolute;
     word-wrap: break-word;
-    background-color: darkgray;
-    bottom: 50%;
-    width: 100%;
     text-align: center;
-    font-size: xx-small;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
 }
 
 #palavraMob {
     position: absolute;
     word-wrap: break-word;
     text-align: center;
-    background-color: whitesmoke;
-    bottom: 50%;
+    font-size: medium;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     width: 100%;
-    font-size: xx-small;
+    height: 100%;
+    background-color: transparent;
 }
 
 #copiarPC {
@@ -36,7 +44,7 @@ button:hover {
     width: 15%;
     height: 49.9%;
     top: 0%;
-   background-color: darkgrey;
+    background-color: darkgrey;
     box-shadow: 10px 10px 10px 10px black;
 }
 
@@ -57,28 +65,36 @@ button:hover {
     width: 85%;
     left: 0%;
     top: 0%;
+    max-height: 49.9;
+    word-break: break-all;
+    max-width: 85%;
+    overflow: auto;
 }
 
 #telaMob {
     position: fixed;
-
     height: 49.9%;
     width: 85%;
     left: 0%;
     bottom: 0%;
+    max-height: 49.9%;
+    word-break: break-all;
+    max-width: 85%;
+    overflow: auto;
 }
 
-.link {
-    position: absolute;
+#link {
+    position: fixed;
     color: black;
     font-family: monospace;
-    bottom: 1%;
     font-size: x-small;
     text-decoration: none;
+    opacity: 60%;
     left: 0%;
-    box-shadow: 0.5px 0.5px;
-    padding: 5px;
-    opacity: 75%;
+    background-color: aliceblue;
+    bottom: 0%;
+    width: 85%;
+    text-align: center;
 }
 
 #config {
@@ -151,12 +167,12 @@ ul {
 #Qp,
 #Qm {
     font-size: xx-small;
-    width: 60px;
-    text-align: center;
+    width: 55px;
     border: none;
     border-radius: 2px;
     background-color: snow;
     padding: 0%;
+    text-align: center;
 }
 
 
@@ -173,7 +189,7 @@ ul {
 }
 
 .diversosPCor {
-    background-color: orangered;
+    background-color: firebrick;
 }
 
 .alfabetosPCor {
@@ -195,7 +211,7 @@ ul {
 }
 
 .diversosMCor {
-    background-color: crimson;
+    background-color: orangered;
 }
 
 .alfabetosMCor {
