@@ -150,7 +150,8 @@ ul {
 #letras,
 #numeros,
 #letras_numeros,
-#alf {
+#alf,
+#comoUsar {
     border-radius: 2px;
     width: 100%;
     font-family: monospace;
@@ -177,6 +178,25 @@ ul {
 
 #alf {
     background-color: aquamarine;
+}
+
+#comoUsar {
+    background-color: darkgray;
+}
+
+#tutoV {
+    position: absolute;
+    width: 100%;
+    height: 95%;
+    bottom: 0;
+}
+
+#fecharTutoV {
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    min-height: 5%;
+
 }
 
 .hidden {

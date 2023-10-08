@@ -16,6 +16,11 @@
     </div>
 
     <button id="config">☰</button>
+
+    <div id="telaMob" class="corM">
+        <button id="palavraMob"></button>
+        <button id="copiarMob">⧉ 📱</button>
+    </div>
     <ul id="configLista" class="hidden">
         ⚞somente⚟
         <li><Button id="letras_numeros">letras e números</Button></li>
@@ -23,17 +28,18 @@
         <li><Button id="numeros">números</Button></li>
         <li><button id="padrao">diversos</button></li>
         <li><Button id="alf">alfabetos</Button></li>
+        <li><button id="comoUsar" onclick="videoTuto()">como usar</button></li>
         <input id="Qp" placeholder="quant PC" onchange="numeroTrocadoPC()" type="number" min="0">
-        <input id="Qm" placeholder="quant MOB" onchange="numeroTrocadoMob()" type="number" min="0">
+        <input id="Qm" placeholder="quant MB" onchange="numeroTrocadoMob()" type="number" min="0">
     </ul>
-    <div id="telaMob" class="corM">
-        <button id="palavraMob"></button>
-        <button id="copiarMob">⧉ 📱</button>
-    </div>
 
     <span id="AP" class="APl">ΛP</span>
 
     <a id="link" href="https://www.bing.com/" target="_blank" rel="noopener noreferrer">Bing 🔎</a>
+
+    <iframe id="tutoV" src="" class="hidden" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <button id="fecharTutoV" class="hidden" onclick="videoTuto()">✖</button>
+
     <script src="src/js/index.js"></script>
 
 </body>

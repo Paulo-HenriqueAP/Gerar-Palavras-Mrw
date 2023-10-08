@@ -939,4 +939,10 @@ function copiarPalavra(pal) {
     palavraTemp.select();
     document.execCommand("copy");
     document.body.removeChild(palavraTemp);
-}; //"navigator.clipboard.writeText(palavraGeradaPara - PC ou Mobile)"" não funcionou no smartphone.
+}
+
+function videoTuto() {
+    document.getElementById("tutoV").classList.toggle("hidden")
+    document.getElementById("fecharTutoV").classList.toggle("hidden")
+    document.getElementById("tutoV").setAttribute("src", "https://www.youtube.com/embed/FdQS9uAtY3o?si=HA3_jbbo3UuuWB8x")
+}
