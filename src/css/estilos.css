@@ -101,20 +101,6 @@ button:hover {
     overflow: auto;
 }
 
-#link {
-    position: fixed;
-    color: black;
-    font-family: monospace;
-    font-size: x-small;
-    text-decoration: none;
-    opacity: 60%;
-    left: 0%;
-    background-color: aliceblue;
-    bottom: 0%;
-    width: 85%;
-    text-align: center;
-}
-
 #config {
     position: absolute;
     background-color: black;
@@ -125,6 +111,9 @@ button:hover {
     font-size: X-small;
     top: 0;
     height: 15px;
+
+    animation-duration: 5s;
+    animation-name: start;
 }
 
 #configLista {
@@ -151,7 +140,10 @@ ul {
 #numeros,
 #letras_numeros,
 #alf,
-#comoUsar {
+#comoUsar,
+#tarefas,
+#pal,
+#contador {
     border-radius: 2px;
     width: 100%;
     font-family: monospace;
@@ -184,6 +176,18 @@ ul {
     background-color: darkgray;
 }
 
+#tarefas {
+    background-color: skyblue;
+}
+
+#pal {
+    background-color: #50C878;
+}
+
+#contador {
+    background-color: violet;
+}
+
 #tutoV {
     position: absolute;
     width: 100%;
@@ -199,9 +203,22 @@ ul {
 
 }
 
+#contarNum {
+    font-style: monospace;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    font-size: large;
+    background-color: black;
+    width: 85%;
+    text-align: center;
+    opacity: 60%;
+}
+
 .hidden {
     display: none;
 }
+
 
 #Qp,
 #Qm {
@@ -218,6 +235,7 @@ ul {
     pointer-events: none;
     background-color: red;
     color: black;
+    opacity: 50%;
 }
 
 .letrasNumerosPCor {
@@ -237,16 +255,19 @@ ul {
 }
 
 .alfabetosPCor {
-    background-color: springgreen;
+    background-color: darkseagreen;
 }
 
+.palPcor {
+    background-color: #50C878;
+}
 
 .letrasNumerosMCor {
     background-color: steelblue;
 }
 
 .letrasMCor {
-    background-color: coral;
+    background-color: #f56E0F;
 }
 
 .numerosMCor {
@@ -260,4 +281,18 @@ ul {
 
 .alfabetosMCor {
     background-color: turquoise;
+}
+
+.palMcor {
+    background-color: whitesmoke;
+}
+
+@keyframes start {
+    0% {
+        background-color: black;
+    }
+
+    50% {
+        background-color: firebrick;
+    }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListaR</title>
+</head>
+
+<body>
+    <ul>
+        <li id="Pesquisas/ atividades(Edge)" style="color: red;"><button class="notOK">Pesquisas/ atividades<p>(Edge)
+                </p>
+            </button></li>
+        <li id="Check-in/ notícias(Bing)" style="color: red;"><button class="notOK">Check-in/ notícias<p>(Bing)</p>
+            </button></li>
+        <li id="App Xbox/ Jewel(Celular)" style="color: red;"><button class="notOK">App Xbox/ Jewel<p>(Celular)</p>
+            </button></li>
+        <li id="Jogar/ com amigos(PC)" style="color: red;"><button class="notOK">Jogar/ com amigos<p>(PC)</p></button>
+        </li>
+        <li id="App Rewards/ tarefas(Xbox)" style="color: red;"><button class="notOK">App Rewards/ tarefas<p>(Xbox)</p>
+            </button></li>
+    </ul>
+
+    <style>
+        body {
+            font-family: monospace;
+            margin: 0%;
+            background-image: url(src/BBR2021.png);
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+
+        button {
+            width: 100%;
+            font-size: large;
+            font-family: monospace;
+        }
+
+        li {
+            margin: 50px;
+            list-style: square;
+            font-size: xx-large;
+        }
+
+        .OK {
+            box-shadow: 1px 1px 1px 1px green;
+            color: green;
+        }
+
+        .notOK {
+            box-shadow: 1px 1px 1px 1px red;
+            color: red;
+        }
+    </style>
+
+    <script>
+        const vermelho = document.querySelectorAll(".notOK")
+
+        vermelho.forEach(function (vermelho) {
+            vermelho.addEventListener("click", function () {
+                let qualBotao = vermelho.textContent.trim();//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim (os espaços em branco afetam o id)
+
+                if (vermelho.classList.contains("OK")) {
+                    document.getElementById(qualBotao).style = ("color: red")
+                } else {
+                    document.getElementById(qualBotao).style = ("color: green")
+                }
+
+                vermelho.classList.toggle("OK")
+                vermelho.classList.toggle("notOK")
+            })
+        })
+
+
+
+    </script>
+</body>
+
+</html>
