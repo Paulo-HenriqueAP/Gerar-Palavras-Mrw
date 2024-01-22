@@ -142,8 +142,7 @@ ul {
 #alf,
 #comoUsar,
 #tarefas,
-#pal,
-#contador {
+#pal {
     border-radius: 2px;
     width: 100%;
     font-family: monospace;
@@ -184,10 +183,6 @@ ul {
     background-color: #50C878;
 }
 
-#contador {
-    background-color: violet;
-}
-
 #tutoV {
     position: absolute;
     width: 100%;
@@ -201,18 +196,6 @@ ul {
     height: max-content;
     min-height: 5%;
 
-}
-
-#contarNum {
-    font-style: monospace;
-    color: white;
-    position: absolute;
-    bottom: 0;
-    font-size: large;
-    background-color: black;
-    width: 85%;
-    text-align: center;
-    opacity: 60%;
 }
 
 .hidden {

@@ -754,1071 +754,31 @@ let palavraGeradaParaMobile = "";
 let copiarMobile = document.getElementById("copiarMob");
 let copiarComputador = document.getElementById("copiarPC");
 
-let numeroP = 30;
-let numeroM = 50;
+let numeroP = "";
+let numeroM = "";
 
 let cont = 0;
+let contM = 0
 
 const configuracao = document.getElementById("config");
 
-let vetor = letras_E_numeros;
-
-let abaixarP = 0;
-let abaixarM = 0;
+let vetor = "off";
 
 let corFundoPC = document.getElementById("telaPC")
 let corFundoMob = document.getElementById("telaMob")
 
-const entenderSignificado = [
-    ' antônimo',
-    ' sinônimo',
-    ' pronúncia',
-    ' definição',
-    ' tradução',
-    ' contexto',
-    ' significado',
-    ' gramática',
-    ' interpretação',
-    ' conjugação',
-    ' ambiguidade',
-    ' analogia',
-    ' articulação',
-    ' cognato',
-    ' derivação',
-    ' expressão',
-    ' fonética',
-    ' hiperônimo',
-    ' ícone',
-    ' jargão',
-    ' léxico',
-    ' metáfora',
-    ' neologismo',
-    ' ortografia',
-    ' parônimo',
-    ' quadrissílabo',
-    ' redundância',
-    ' sílaba',
-    ' tropeço',
-    ' uso',
-    ' variante',
-    ' idioma',
-    ' traduzir',
-    ' soletrar',
-    ' linguagem',
-    ' dialetos',
-    ' entonação',
-    ' entendimento',
-    ' gíria',
-    ' índice',
-    ' kanji',
-    ' lexicografia',
-    ' morfologia',
-    ' nomenclatura',
-    ' onomatopeia',
-    ' sintaxe',
-    ' tautologia',
-    ' unicode',
-    ' vocabulário',
-    ' abreviação',
-    ' acento',
-    ' acrônimo',
-    ' adjetivo',
-    ' advérbio',
-    ' afixo',
-    ' aliteração',
-    ' amplitude',
-    ' anacronismo',
-    ' antítese',
-    ' apócope',
-    ' arcaísmo',
-    ' assíndeto',
-    ' assonância',
-    ' bilingue',
-    ' cacofonia',
-    ' caudaloso',
-    ' cláusula',
-    ' coerência',
-    ' coloquialismo',
-    ' comutação',
-    ' conjugar',
-    ' correlação',
-    ' crase',
-    ' desinência',
-    ' dicionário',
-    ' dígrafo',
-    ' discurso',
-    ' ecletismo',
-    ' elipse',
-    ' epíteto',
-    ' eufonia',
-    ' exceção',
-    ' falar',
-    ' fonema',
-    ' fraseologia',
-    ' genérico',
-    ' gerúndio',
-    ' gentílico',
-    ' grau',
-    ' gutural',
-    ' haplologia',
-    ' hífen',
-    ' hipérbole',
-    ' iambismo',
-    ' imutável',
-    ' indicativo',
-    ' infinitivo',
-    ' inflexão',
-    ' interjeição',
-    ' ironia',
-    ' isotopia',
-    ' janela',
-    ' juro',
-    ' lauda',
-    ' lexema',
-    ' liame',
-    ' locução',
-    ' logograma',
-    ' lusofonia',
-    ' máximo',
-    ' metrificação',
-    ' metonímia',
-    ' monossílabo',
-    ' mútua',
-    ' nexo',
-    ' numeral',
-    ' objetividade',
-    ' ocioso',
-    ' onisciente',
-    ' orador',
-    ' oxítona',
-    ' palavra',
-    ' paradigma',
-    ' paráfrase',
-    ' patuá',
-    ' pejorativo',
-    ' perífrase',
-    ' plebeu',
-    ' polissemia',
-    ' pronome',
-    ' proparoxítona',
-    ' prosódia',
-    ' queima',
-    ' quimera',
-    ' quinteto',
-    ' quiproquó',
-    ' quixotesco',
-    ' rapsódia',
-    ' razão',
-    ' rebuscado',
-    ' recíproco',
-    ' rima',
-    ' ruborizar',
-    ' sacrifício',
-    ' saudade',
-    ' semântica',
-    ' silepse',
-    ' soneto',
-    ' surrealista',
-    ' suscetível',
-    ' sussurro',
-    ' síncopa',
-    ' tese',
-    ' tônico',
-    ' tradição',
-    ' trovejar',
-    ' tônus',
-    ' umbigo',
-    ' universo',
-    ' utópico',
-    //
-    ' antonym',
-    ' synonym',
-    ' pronunciation',
-    ' definition',
-    ' translation',
-    ' context',
-    ' meaning',
-    ' grammar',
-    ' interpretation',
-    ' conjugation',
-    ' ambiguity',
-    ' analogy',
-    ' articulation',
-    ' cognate',
-    ' derivation',
-    ' expression',
-    ' phonetics',
-    ' hypernym',
-    ' icon',
-    ' jargon',
-    ' lexicon',
-    ' metaphor',
-    ' neologism',
-    ' spelling',
-    ' paronym',
-    ' quadrisyllable',
-    ' redundancy',
-    ' syllable',
-    ' slip',
-    ' usage',
-    ' variant',
-    ' language',
-    ' translate',
-    ' spell',
-    ' linguistics',
-    ' dialects',
-    ' intonation',
-    ' understanding',
-    ' slang',
-    ' index',
-    ' kanji',
-    ' lexicography',
-    ' morphology',
-    ' nomenclature',
-    ' onomatopoeia',
-    ' syntax',
-    ' tautology',
-    ' unicode',
-    ' vocabulary',
-    ' abbreviation',
-    ' accent',
-    ' acronym',
-    ' adjective',
-    ' adverb',
-    ' affix',
-    ' alliteration',
-    ' amplitude',
-    ' anacronism',
-    ' antithesis',
-    ' apocope',
-    ' archaism',
-    ' assonance',
-    ' bilingual',
-    ' cacophony',
-    ' caudal',
-    ' clause',
-    ' coherence',
-    ' colloquialism',
-    ' commutation',
-    ' conjugate',
-    ' correlation',
-    ' crasis',
-    ' declension',
-    ' dictionary',
-    ' digraph',
-    ' discourse',
-    ' eclecticism',
-    ' ellipsis',
-    ' epithet',
-    ' euphony',
-    ' exception',
-    ' speak',
-    ' phoneme',
-    ' phraseology',
-    ' generic',
-    ' gerund',
-    ' gentilic',
-    ' degree',
-    ' guttural',
-    ' haplology',
-    ' hyphen',
-    ' hyperbole',
-    ' iambic',
-    ' immutable',
-    ' indicative',
-    ' infinitive',
-    ' inflection',
-    ' interjection',
-    ' irony',
-    ' isotopy',
-    ' window',
-    ' oath',
-    ' laud',
-    ' lexeme',
-    ' liaison',
-    ' phrase',
-    ' logogram',
-    ' lusophony',
-    ' maximum',
-    ' metrication',
-    ' metonymy',
-    ' monosyllable',
-    ' mutual',
-    ' nexus',
-    ' numeral',
-    ' objectivity',
-    ' idle',
-    ' omniscient',
-    ' speaker',
-    ' oxytone',
-    ' word',
-    ' paradigm',
-    ' paraphrase',
-    ' patua',
-    ' pejorative',
-    ' periphrasis',
-    ' plebeian',
-    ' polysemy',
-    ' pronoun',
-    ' proparoxytone',
-    ' prosody',
-    ' burn',
-    ' chimera',
-    ' quintet',
-    ' quiproquo',
-    ' quixotic',
-    ' rhapsody',
-    ' reason',
-    ' ornate',
-    ' reciprocal',
-    ' rhyme',
-    ' blush',
-    ' sacrifice',
-    ' nostalgia',
-    ' sedentary',
-    ' semantics',
-    ' syllepsis',
-    ' sonnet',
-    ' surrealist',
-    ' susceptible',
-    ' whisper',
-    ' syncopation',
-    ' thesis',
-    ' tonic',
-    ' tradition',
-    ' thunder',
-    ' tone',
-    ' navel',
-    ' universe',
-    ' utopian',
-    ' venus',
-    ' vertex',
-    ' journey',
-    ' vigorous',
-    ' twenty',
-    ' viola',
-    ' vision',
-    ' fern',
-    ' curious',
-    ' cup',
-    ' schist',
-    ' chote',
-    ' spear',
-    ' caretaker',
-    //
-    ' antónimo',
-    ' sinónimo',
-    ' pronunciación',
-    ' definición',
-    ' traducción',
-    ' contexto',
-    ' significado',
-    ' gramática',
-    ' interpretación',
-    ' conjugación',
-    ' ambigüedad',
-    ' analogía',
-    ' articulación',
-    ' cognado',
-    ' derivación',
-    ' expresión',
-    ' fonética',
-    ' hiperónimo',
-    ' ícono',
-    ' jerga',
-    ' léxico',
-    ' metáfora',
-    ' neologismo',
-    ' ortografía',
-    ' parónimo',
-    ' cuadrisílaba',
-    ' redundancia',
-    ' sílaba',
-    ' tropiezo',
-    ' uso',
-    ' variante',
-    ' idioma',
-    ' traducir',
-    ' soletrar',
-    ' lenguaje',
-    ' dialectos',
-    ' entonación',
-    ' entendimiento',
-    ' jerga',
-    ' índice',
-    ' kanji',
-    ' lexicografía',
-    ' morfología',
-    ' nomenclatura',
-    ' onomatopeya',
-    ' sintaxis',
-    ' tautología',
-    ' unicode',
-    ' vocabulario',
-    ' abreviatura',
-    ' acento',
-    ' acrónimo',
-    ' adjetivo',
-    ' adverbio',
-    ' afijo',
-    ' aliteración',
-    ' amplitud',
-    ' anacronismo',
-    ' antítesis',
-    ' apócope',
-    ' arcaísmo',
-    ' asíndeton',
-    ' asociación',
-    ' bilingüe',
-    ' cacofonía',
-    ' caudaloso',
-    ' cláusula',
-    ' coherencia',
-    ' coloquialismo',
-    ' conmutación',
-    ' conjugar',
-    ' correlación',
-    ' crasis',
-    ' desinencia',
-    ' diccionario',
-    ' dígrafo',
-    ' discurso',
-    ' eclecticismo',
-    ' elipsis',
-    ' epíteto',
-    ' eufonía',
-    ' excepción',
-    ' hablar',
-    ' fonema',
-    ' fraseología',
-    ' genérico',
-    ' gerundio',
-    ' gentilicio',
-    ' grado',
-    ' gutural',
-    ' haplología',
-    ' guión',
-    ' hipérbole',
-    ' íambo',
-    ' inmutable',
-    ' indicativo',
-    ' infinitivo',
-    ' inflexión',
-    ' interjección',
-    ' ironía',
-    ' isotopía',
-    ' ventana',
-    ' juramento',
-    ' láudano',
-    ' lexema',
-    ' liaison',
-    ' locución',
-    ' logograma',
-    ' lusofonía',
-    ' máximo',
-    ' métrica',
-    ' metonimia',
-    ' monosílabo',
-    ' mutuo',
-    ' nexo',
-    ' numeral',
-    ' objetividad',
-    ' ocioso',
-    ' omnisciente',
-    ' orador',
-    ' oxítono',
-    ' palabra',
-    ' paradigma',
-    ' paráfrasis',
-    ' patuá',
-    ' peyorativo',
-    ' perífrasis',
-    ' plebeyo',
-    ' polisemia',
-    ' pronombre',
-    ' proparoxítono',
-    ' prosodia',
-    ' quema',
-    ' quimera',
-    ' quinteto',
-    ' quiproquo',
-    ' quijotesco',
-    ' rapsodia',
-    ' razón',
-    ' rebuscado',
-    ' recíproco',
-    ' rima',
-    ' ruborizar',
-    ' sacrificio',
-    ' nostalgia',
-    ' sedentario',
-    ' semántica',
-    ' silepsis',
-    ' soneto',
-    ' surrealista',
-    ' susceptible',
-    ' susurro',
-    ' síncopa',
-    ' tesis',
-    ' tónico',
-    ' tradición',
-    ' tronar',
-    ' tono',
-    ' ombligo',
-    ' universo',
-    ' utópico',
-    ' venus',
-    ' vértice',
-    ' viaje',
-    ' vigoroso',
-    ' viola',
-    ' visión',
-    ' helecho',
-    ' curioso',
-    ' taza',
-    ' esquisto',
-    ' xote',
-    ' lanceta',
-    ' celador',
-    //
-    ' antonyme',
-    ' synonyme',
-    ' prononciation',
-    ' définition',
-    ' traduction',
-    ' contexte',
-    ' signification',
-    ' grammaire',
-    ' interprétation',
-    ' conjugaison',
-    ' ambiguïté',
-    ' analogie',
-    ' articulation',
-    ' cognat',
-    ' dérivation',
-    ' expression',
-    ' phonétique',
-    ' hyperonyme',
-    ' icône',
-    ' jargon',
-    ' lexique',
-    ' métaphore',
-    ' néologisme',
-    ' orthographe',
-    ' paronyme',
-    ' quadrisyllabe',
-    ' redondance',
-    ' syllabe',
-    ' trébuchement',
-    ' usage',
-    ' variante',
-    ' langue',
-    ' traduire',
-    ' épeler',
-    ' linguistique',
-    ' dialectes',
-    ' intonation',
-    ' compréhension',
-    ' argot',
-    ' index',
-    ' kanji',
-    ' lexicographie',
-    ' morphologie',
-    ' nomenclature',
-    ' onomatopée',
-    ' syntaxe',
-    ' tautologie',
-    ' unicode',
-    ' vocabulaire',
-    ' abréviation',
-    ' accent',
-    ' acronyme',
-    ' adjectif',
-    ' adverbe',
-    ' affixe',
-    ' allitération',
-    ' amplitude',
-    ' anachronisme',
-    ' antithèse',
-    ' apocope',
-    ' archaïsme',
-    ' assonance',
-    ' bilingue',
-    ' cacophonie',
-    ' caudal',
-    ' clause',
-    ' cohérence',
-    ' colloquialisme',
-    ' commutation',
-    ' conjuguer',
-    ' corrélation',
-    ' crase',
-    ' déclinaison',
-    ' dictionnaire',
-    ' digramme',
-    ' discours',
-    ' éclectisme',
-    ' ellipse',
-    ' épithète',
-    ' euphonie',
-    ' exception',
-    ' parler',
-    ' phonème',
-    ' phraséologie',
-    ' générique',
-    ' gérondif',
-    ' gentilé',
-    ' degré',
-    ' guttural',
-    ' haplologie',
-    ' trait d\'union',
-    ' hyperbole',
-    ' iambique',
-    ' immuable',
-    ' indicatif',
-    ' infinitif',
-    ' inflexion',
-    ' interjection',
-    ' ironie',
-    ' isotopie',
-    ' fenêtre',
-    ' serment',
-    ' laudanum',
-    ' lexème',
-    ' liaison',
-    ' locution',
-    ' logogramme',
-    ' lusophonie',
-    ' maximum',
-    ' métrification',
-    ' métonymie',
-    ' monosyllabe',
-    ' mutuel',
-    ' nexus',
-    ' numéral',
-    ' objectivité',
-    ' oisif',
-    ' omniscient',
-    ' orateur',
-    ' oxyton',
-    ' mot',
-    ' paradigme',
-    ' paraphrase',
-    ' patois',
-    ' péjoratif',
-    ' périphrase',
-    ' plébéien',
-    ' polysémie',
-    ' pronom',
-    ' proparoxyton',
-    ' prosodie',
-    ' brûler',
-    ' chimère',
-    ' quintette',
-    ' quiproquo',
-    ' quichottesque',
-    ' rhapsodie',
-    ' raison',
-    ' recherché',
-    ' réciproque',
-    ' rime',
-    ' rougir',
-    ' sacrifice',
-    ' nostalgie',
-    ' sédentaire',
-    ' sémantique',
-    ' syllepse',
-    ' sonnet',
-    ' surréaliste',
-    ' susceptible',
-    ' murmure',
-    ' syncope',
-    ' thèse',
-    ' tonique',
-    ' tradition',
-    ' tonnerre',
-    ' ton',
-    ' nombril',
-    ' univers',
-    ' utopique',
-    ' Vénus',
-    ' vertèbre',
-    ' voyage',
-    ' vigoureux',
-    ' vingt',
-    ' viole',
-    ' vision',
-    ' fougère',
-    ' curieux',
-    ' tasse',
-    ' schiste',
-    ' xote',
-    ' lancette',
-    ' concierge',
-    //
-    ' antonimo',
-    ' sinonimo',
-    ' pronuncia',
-    ' definizione',
-    ' traduzione',
-    ' contesto',
-    ' significato',
-    ' grammatica',
-    ' interpretazione',
-    ' coniugazione',
-    ' ambiguità',
-    ' analogia',
-    ' articolazione',
-    ' cognato',
-    ' derivazione',
-    ' espressione',
-    ' fonetica',
-    ' iperonimo',
-    ' icona',
-    ' gergo',
-    ' lessico',
-    ' metafora',
-    ' neologismo',
-    ' ortografia',
-    ' paronimo',
-    ' quadrisillabo',
-    ' ridondanza',
-    ' sillaba',
-    ' inciampo',
-    ' uso',
-    ' variante',
-    ' lingua',
-    ' tradurre',
-    ' compitare',
-    ' linguistica',
-    ' dialetti',
-    ' intonazione',
-    ' comprensione',
-    ' gergo',
-    ' indice',
-    ' kanji',
-    ' lexicografia',
-    ' morfologia',
-    ' nomenclatura',
-    ' onomatopea',
-    ' sintassi',
-    ' tautologia',
-    ' unicode',
-    ' vocabolario',
-    ' abbreviazione',
-    ' accento',
-    ' acronimo',
-    ' aggettivo',
-    ' avverbio',
-    ' affisso',
-    ' alliterazione',
-    ' ampiezza',
-    ' anacronismo',
-    ' antitesi',
-    ' apocope',
-    ' arcaismo',
-    ' assonanza',
-    ' bilingue',
-    ' cacofonia',
-    ' caudale',
-    ' clausola',
-    ' coerenza',
-    ' colloquialismo',
-    ' commutazione',
-    ' coniugare',
-    ' correlazione',
-    ' crasi',
-    ' declinazione',
-    ' dizionario',
-    ' digrafo',
-    ' discorso',
-    ' eclettismo',
-    ' ellissi',
-    ' epiteto',
-    ' eufonia',
-    ' eccezione',
-    ' parlare',
-    ' fonema',
-    ' fraseologia',
-    ' generico',
-    ' gerundio',
-    ' gentilizio',
-    ' grado',
-    ' gutturale',
-    ' haplologia',
-    ' trattino',
-    ' iperbole',
-    ' iambo',
-    ' immutabile',
-    ' indicativo',
-    ' infinito',
-    ' inflessione',
-    ' interiezione',
-    ' ironia',
-    ' isotopia',
-    ' finestra',
-    ' giuramento',
-    ' laudano',
-    ' lexema',
-    ' liaison',
-    ' locuzione',
-    ' logogramma',
-    ' lusofonia',
-    ' massimo',
-    ' metricazione',
-    ' metonimia',
-    ' monosillabo',
-    ' mutuo',
-    ' nesso',
-    ' numero',
-    ' oggettività',
-    ' ozioso',
-    ' onnisciente',
-    ' oratore',
-    ' ossitono',
-    ' parola',
-    ' paradigma',
-    ' parafrasi',
-    ' patois',
-    ' peggiorativo',
-    ' perifrasi',
-    ' plebeo',
-    ' polisemia',
-    ' pronome',
-    ' proparossitono',
-    ' prosodia',
-    ' bruciare',
-    ' chimera',
-    ' quintetto',
-    ' quiproquo',
-    ' chiaotesco',
-    ' rapsodia',
-    ' ragione',
-    ' ricercato',
-    ' reciproco',
-    ' rima',
-    ' arrossire',
-    ' sacrificio',
-    ' nostalgia',
-    ' sedentario',
-    ' semantica',
-    ' silepsi',
-    ' sonetto',
-    ' surrealista',
-    ' suscettibile',
-    ' bisbiglio',
-    ' sincopi',
-    ' tesi',
-    ' tonico',
-    ' tradizione',
-    ' tuono',
-    ' tono',
-    ' ombelico',
-    ' universo',
-    ' utopico',
-    ' venere',
-    ' vertice',
-    ' viaggio',
-    ' vigoroso',
-    ' viola',
-    ' visione',
-    ' felce',
-    ' curioso',
-    ' tazza',
-    ' scisto',
-    ' xote',
-    ' lancetta',
-    ' custode',
-    //
-    ' Antonym',
-    ' Synonym',
-    ' Aussprache',
-    ' Definition',
-    ' Übersetzung',
-    ' Kontext',
-    ' Bedeutung',
-    ' Grammatik',
-    ' Interpretation',
-    ' Konjugation',
-    ' Ambiguität',
-    ' Analogie',
-    ' Artikulation',
-    ' Kognat',
-    ' Ableitung',
-    ' Ausdruck',
-    ' Phonetik',
-    ' Hyperonym',
-    ' Ikone',
-    ' Jargon',
-    ' Lexikon',
-    ' Metapher',
-    ' Neologismus',
-    ' Rechtschreibung',
-    ' Paronym',
-    ' Quadrisyllabel',
-    ' Redundanz',
-    ' Silbe',
-    ' Stolpern',
-    ' Verwendung',
-    ' Variante',
-    ' Sprache',
-    ' Übersetzen',
-    ' Buchstabieren',
-    ' Linguistik',
-    ' Dialekte',
-    ' Intonation',
-    ' Verständnis',
-    ' Slang',
-    ' Index',
-    ' Kanji',
-    ' Lexikografie',
-    ' Morphologie',
-    ' Nomenklatur',
-    ' Onomatopöie',
-    ' Syntax',
-    ' Tautologie',
-    ' Unicode',
-    ' Vokabular',
-    ' Abkürzung',
-    ' Akzent',
-    ' Akronym',
-    ' Adjektiv',
-    ' Adverb',
-    ' Affix',
-    ' Alliteration',
-    ' Amplitude',
-    ' Anachronismus',
-    ' Antithese',
-    ' Apokope',
-    ' Archaismus',
-    ' Assoziation',
-    ' Zweisprachig',
-    ' Kakophonie',
-    ' Kaudal',
-    ' Klausel',
-    ' Kohärenz',
-    ' Kolloquialismus',
-    ' Kommutation',
-    ' Konjugieren',
-    ' Korrelation',
-    ' Krasis',
-    ' Deklination',
-    ' Wörterbuch',
-    ' Digraph',
-    ' Diskurs',
-    ' Eklektizismus',
-    ' Ellipse',
-    ' Epitheton',
-    ' Euphonie',
-    ' Ausnahme',
-    ' Sprechen',
-    ' Phonem',
-    ' Phrasenologie',
-    ' Generisch',
-    ' Gerundium',
-    ' Gentilizium',
-    ' Grad',
-    ' Guttural',
-    ' Haplogie',
-    ' Bindestrich',
-    ' Hyperbel',
-    ' Jambus',
-    ' Unveränderlich',
-    ' Indikativ',
-    ' Infinitiv',
-    ' Inflektion',
-    ' Interjektion',
-    ' Ironie',
-    ' Isotopie',
-    ' Fenster',
-    ' Eid',
-    ' Laudanum',
-    ' Lexem',
-    ' Liaison',
-    ' Phrase',
-    ' Logogramm',
-    ' Lusophonie',
-    ' Maximum',
-    ' Metrik',
-    ' Metonymie',
-    ' Monosyllabus',
-    ' Gegenseitig',
-    ' Nexus',
-    ' Nummer',
-    ' Objektivität',
-    ' Untätig',
-    ' Allwissend',
-    ' Sprecher',
-    ' Oxyton',
-    ' Wort',
-    ' Paradigma',
-    ' Paraphrase',
-    ' Patois',
-    ' Pejorativ',
-    ' Periphrase',
-    ' Plebejer',
-    ' Polysemie',
-    ' Pronomen',
-    ' Proparoxüton',
-    ' Prosodie',
-    ' Verbrennen',
-    ' Chimäre',
-    ' Quintett',
-    ' Quiproquo',
-    ' Quijotisch',
-    ' Rhapsodie',
-    ' Vernunft',
-    ' Suchen',
-    ' Reziprok',
-    ' Reim',
-    ' Erröten',
-    ' Opfer',
-    ' Nostalgie',
-    ' Sesshaft',
-    ' Semantik',
-    ' Syllepsis',
-    ' Sonett',
-    ' Surrealistisch',
-    ' Anfällig',
-    ' Flüstern',
-    ' Synkope',
-    ' These',
-    ' Tonisch',
-    ' Tradition',
-    ' Donner',
-    ' Ton',
-    ' Nabel',
-    ' Universum',
-    ' Utopisch',
-    ' Venus',
-    ' Vertex',
-    ' Reise',
-    ' Kraftvoll',
-    ' Bratsche',
-    ' Vision',
-    ' Farn',
-    ' Neugierig',
-    ' Tasse',
-    ' Schiefer',
-    ' Xote',
-    ' Lanze',
-    ' Hausmeister'
-];
-
-let travado = false;
-let num = 8
+let arrayTXT;
 
 corFundoPC.classList.add("palPcor");
 corFundoMob.classList.add("palMcor");
 
 function definirCaractereAleatorio() {
     cont++;
+    contM++;
     cta = (vetor[(Math.floor(Math.random() * vetor.length))]);
 };
 
 function limpar() {
-    cont = 0;
-
     espacoPalavraPC.textContent = "";
     espacoPalavraMob.textContent = "";
 
@@ -1831,7 +791,10 @@ function limpar() {
     document.getElementById("Qm").value = "";
 
     numeroP = 30;
-    numeroM = 50;
+    numeroM = 20;
+
+    cont = 0;
+    contM = 0;
 
     corFundoPC.classList.remove("letrasPCor");
     corFundoMob.classList.remove("letrasMCor");
@@ -1846,9 +809,8 @@ function limpar() {
     corFundoPC.classList.remove("palPcor");
     corFundoMob.classList.remove("palMcor");
 
-    num = 8
-    travado = true;
-    document.getElementById("contador").classList.add("bloquear");
+    document.getElementById("Qp").classList.remove("bloquear")
+    document.getElementById("Qm").classList.remove("bloquear")
 };
 
 document.getElementById("letras_numeros").addEventListener("click", () => {
@@ -1856,8 +818,9 @@ document.getElementById("letras_numeros").addEventListener("click", () => {
     corFundoPC.classList.add("letrasNumerosPCor");
     corFundoMob.classList.add("letrasNumerosMCor");
     vetor = letras_E_numeros;
-    definirPC();
     definirMob();
+    cont = 0;
+    definirPC();
 });
 
 document.getElementById("letras").addEventListener("click", () => {
@@ -1865,8 +828,9 @@ document.getElementById("letras").addEventListener("click", () => {
     corFundoPC.classList.add("letrasPCor");
     corFundoMob.classList.add("letrasMCor");
     vetor = letras;
-    definirPC();
     definirMob();
+    cont = 0;
+    definirPC();
 });
 
 document.getElementById("numeros").addEventListener("click", () => {
@@ -1874,8 +838,9 @@ document.getElementById("numeros").addEventListener("click", () => {
     corFundoPC.classList.add("numerosPCor");
     corFundoMob.classList.add("numerosMCor");
     vetor = numeros;
-    definirPC();
     definirMob();
+    cont = 0;
+    definirPC();
 });
 
 document.getElementById("padrao").addEventListener("click", () => {
@@ -1883,8 +848,9 @@ document.getElementById("padrao").addEventListener("click", () => {
     corFundoPC.classList.add("diversosPCor");
     corFundoMob.classList.add("diversosMCor");
     vetor = caracteres;
-    definirPC();
     definirMob();
+    cont = 0;
+    definirPC();
 });
 
 document.getElementById("alf").addEventListener("click", () => {
@@ -1892,8 +858,9 @@ document.getElementById("alf").addEventListener("click", () => {
     corFundoPC.classList.add("alfabetosPCor");
     corFundoMob.classList.add("alfabetosMCor");
     vetor = alfabetosPlus;
-    definirPC();
     definirMob();
+    cont = 0;
+    definirPC();
 })
 
 function numeroTrocadoPC() {
@@ -1902,7 +869,6 @@ function numeroTrocadoPC() {
     document.getElementById("AP").classList.remove("APc")
     copiarComputador.style = " background-color: darkgray;";
     numeroP = document.getElementById("Qp").value;
-    abaixarP = numeroP
 
     switch (document.getElementById("Qp").value) {
         case "":
@@ -1913,14 +879,13 @@ function numeroTrocadoPC() {
 };
 
 function numeroTrocadoMob() {
-    cont = 0;
+    contM = 0;
     espacoPalavraMob.textContent = "";
     copiarMobile.style = "background-color: whitesmoke;";
     numeroM = document.getElementById("Qm").value;
-    abaixarM = numeroM
     switch (document.getElementById("Qm").value) {
         case "":
-            numeroM = 50;
+            numeroM = 20;
             break;
     }
     definirMob();
@@ -1944,7 +909,7 @@ function definirPC() {
 };
 
 function definirMob() {
-    while (cont < numeroM) {
+    while (contM < numeroM) {
         definirCaractereAleatorio()
         espacoPalavraMob.textContent += cta
     };
@@ -1961,6 +926,18 @@ copiarComputador.addEventListener("click", function () {
         copiarComputador.textContent = "⧉ 🖥️"
         copiarComputador.style = "background-color: #50C878; font-size: small;";
         document.getElementById("configLista").classList.remove("bloquear")
+
+        switch (vetor) {
+            case "off":
+                definirPalavras()
+                break;
+            default:
+                cont = 0;
+                espacoPalavraPC.textContent = "";
+                document.getElementById("AP").classList.remove("APc")
+                copiarComputador.style = " background-color: darkgray;"
+                definirPC()
+        }
     }, 2000);
 });
 
@@ -1969,11 +946,26 @@ copiarMobile.addEventListener("click", function () {
     copiarPalavra(palavraGeradaParaMobile);
     copiarMobile.textContent = "Copiado!";
     copiarMobile.style = "background-color: #50c896; font-size: xx-small;";
+    document.getElementById("configLista").classList.add("bloquear")
     setTimeout(function () {
         copiarMobile.textContent = "⧉ 📱"
         copiarMobile.style = "background-color: #50c896; font-size: small;";
+        document.getElementById("configLista").classList.remove("bloquear")
+
+        switch (vetor) {
+            case "off":
+                definirPalavras()
+                break;
+            default:
+                contM = 0
+                espacoPalavraMob.textContent = ""
+                copiarMobile.style = "background-color: whitesmoke;";
+                definirMob()
+        }
     }, 2000);
 });
+
+
 
 function copiarPalavra(pal) {
     let palavraTemp = document.createElement("input");
@@ -1994,8 +986,6 @@ function tarefas() {
     window.open("listaR.html")
 }
 
-let arrayTXT;
-
 fetch("src/txt/br-utf8.txt")
     .then((res) => res.text())
     .then((data) => {
@@ -2004,42 +994,14 @@ fetch("src/txt/br-utf8.txt")
     })
 
 function definirPalavras() {
-    document.getElementById("contador").classList.remove("bloquear")
-    travado = false;
+    limpar()
+    document.getElementById("Qp").classList.add("bloquear")
+    document.getElementById("Qm").classList.add("bloquear")
+    vetor = "off"
 
     corFundoPC.classList.add("palPcor");
     corFundoMob.classList.add("palMcor");
 
-    espacoPalavraMob.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)]) + (entenderSignificado[Math.floor(Math.random() * entenderSignificado.length)])
-    espacoPalavraPC.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)]) + (entenderSignificado[Math.floor(Math.random() * entenderSignificado.length)])
+    espacoPalavraMob.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)])// + (entenderSignificado[Math.floor(Math.random() * entenderSignificado.length)])
+    espacoPalavraPC.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)])// + (entenderSignificado[Math.floor(Math.random() * entenderSignificado.length)])
 }
-
-function contar() {
-    document.getElementById("contador").classList.add("bloquear")
-
-    if (travado === true) {
-        travado = false
-        document.getElementById("contarNum").textContent = ""
-        return;
-    }
-
-    document.getElementById("contarNum").textContent = num
-
-    setTimeout(function () {
-        num -= 1
-        document.getElementById("contador").classList.add("bloquear")
-        contar()
-
-        if (num === 0 && travado === false) {
-            num = 8
-            document.getElementById("contarNum").textContent = "PESQUISE"
-            document.getElementById("configLista").classList.add("bloquear")
-            definirPalavras()
-        }
-    }, 1000)
-
-    setTimeout(function () {
-        document.getElementById("configLista").classList.remove("bloquear")
-    }, 2000)
-}
-

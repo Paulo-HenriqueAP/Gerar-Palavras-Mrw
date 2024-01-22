@@ -23,22 +23,19 @@
     </div>
     <ul id="configLista" class="hidden">
         ⚞somente⚟
+        <li><Button id="pal" onclick="definirPalavras()">palavras</Button></li>
         <li><Button id="letras_numeros">letras e números</Button></li>
         <li><Button id="letras">letras</Button></li>
         <li><Button id="numeros">números</Button></li>
         <li><button id="padrao">diversos</button></li>
         <li><Button id="alf">alfabetos</Button></li>
-        <li><Button id="pal" onclick="definirPalavras()">palavras</Button></li>
         <li><button id="tarefas" onclick="tarefas()">tarefas</button></li>
         <li><button id="comoUsar" onclick="videoTuto()">como usar</button></li>
-        <li><button id="contador" onclick="contar()" class="opaco">contador</button></li>
         <input id="Qp" placeholder="quant PC" onchange="numeroTrocadoPC()" type="number" min="0">
         <input id="Qm" placeholder="quant MB" onchange="numeroTrocadoMob()" type="number" min="0">
     </ul>
 
     <span id="AP" class="APl">ΛP</span>
-
-    <span id="contarNum"></span>
 
     <iframe id="tutoV" src="" class="hidden" title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

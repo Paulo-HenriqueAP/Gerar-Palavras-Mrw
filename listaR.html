@@ -20,6 +20,8 @@
         </li>
         <li id="App Rewards/ tarefas(Xbox)" style="color: red;"><button class="notOK">App Rewards/ tarefas<p>(Xbox)</p>
             </button></li>
+
+        <li style="color: gold;"><span id="contText" style="color: white;">1</span></li>
     </ul>
 
     <style>
@@ -55,24 +57,43 @@
     </style>
 
     <script>
-        const vermelho = document.querySelectorAll(".notOK")
+        let cont = 8
+        var maxCont = 8 //can change on devtools
+        const redSquare = document.querySelectorAll(".notOK")
 
-        vermelho.forEach(function (vermelho) {
-            vermelho.addEventListener("click", function () {
-                let qualBotao = vermelho.textContent.trim();//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim (os espaços em branco afetam o id)
+        timer()
 
-                if (vermelho.classList.contains("OK")) {
-                    document.getElementById(qualBotao).style = ("color: red")
+        redSquare.forEach(function (redSquare) {
+            redSquare.addEventListener("click", function () {
+                let buttonSelected = redSquare.textContent.trim();//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim (os espaços em branco afetam o id)
+
+                if (redSquare.classList.contains("OK")) {
+                    document.getElementById(buttonSelected).style = ("color: red")
                 } else {
-                    document.getElementById(qualBotao).style = ("color: green")
+                    document.getElementById(buttonSelected).style = ("color: green")
                 }
 
-                vermelho.classList.toggle("OK")
-                vermelho.classList.toggle("notOK")
+                redSquare.classList.toggle("OK")
+                redSquare.classList.toggle("notOK")
             })
         })
 
+        function timer() {
+            document.getElementById("contText").innerHTML = cont
 
+            setTimeout(function () {
+                document.getElementById("contText").classList.remove("OK")
+                cont--
+                timer()
+
+                if (cont <= 0) {
+                    cont = maxCont
+                    document.getElementById("contText").classList.add("OK")
+                    document.getElementById("contText").innerHTML = "PESQUISE"
+                }
+            }, 1000)
+
+        }
 
     </script>
 </body>
