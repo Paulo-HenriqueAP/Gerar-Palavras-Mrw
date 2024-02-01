@@ -135,7 +135,7 @@ ul {
     border-radius: 2px;
 }
 
-#padrao,
+#diversos,
 #letras,
 #numeros,
 #letras_numeros,
@@ -151,12 +151,12 @@ ul {
     border: none;
 }
 
-#padrao {
-    background-color: red;
+#diversos {
+    background-color: orangered;
 }
 
 #letras {
-    background-color: tomato;
+    background-color: #F56E0F;
 }
 
 #numeros {
@@ -164,7 +164,7 @@ ul {
 }
 
 #letras_numeros {
-    background-color: white;
+    background-color: wheat;
 }
 
 #alf {
@@ -226,7 +226,7 @@ ul {
 }
 
 .letrasPCor {
-    background-color: tan;
+    background-color: #F56E0F;
 }
 
 .numerosPCor {
@@ -234,7 +234,7 @@ ul {
 }
 
 .diversosPCor {
-    background-color: firebrick;
+    background-color: orangered;
 }
 
 .alfabetosPCor {
@@ -250,7 +250,7 @@ ul {
 }
 
 .letrasMCor {
-    background-color: #f56E0F;
+    background-color: tan;
 }
 
 .numerosMCor {
@@ -259,7 +259,7 @@ ul {
 }
 
 .diversosMCor {
-    background-color: orangered;
+    background-color: firebrick;
 }
 
 .alfabetosMCor {

@@ -57,43 +57,43 @@
     </style>
 
     <script>
-        let cont = 8
-        var maxCont = 8 //can change on devtools
-        const redSquare = document.querySelectorAll(".notOK")
+        let cont = 8;
+        var maxCont = 8; //can change it on devtools
+        const redSquare = document.querySelectorAll(".notOK");
 
-        timer()
+        timer();
 
         redSquare.forEach(function (redSquare) {
             redSquare.addEventListener("click", function () {
                 let buttonSelected = redSquare.textContent.trim();//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim (os espaços em branco afetam o id)
 
                 if (redSquare.classList.contains("OK")) {
-                    document.getElementById(buttonSelected).style = ("color: red")
+                    document.getElementById(buttonSelected).style = ("color: red");
                 } else {
-                    document.getElementById(buttonSelected).style = ("color: green")
+                    document.getElementById(buttonSelected).style = ("color: green");
                 }
 
-                redSquare.classList.toggle("OK")
-                redSquare.classList.toggle("notOK")
+                redSquare.classList.toggle("OK");
+                redSquare.classList.toggle("notOK");
             })
         })
 
         function timer() {
-            document.getElementById("contText").innerHTML = cont
+            document.getElementById("contText").innerHTML = cont;
 
             setTimeout(function () {
-                document.getElementById("contText").classList.remove("OK")
-                cont--
-                timer()
+                document.getElementById("contText").classList.remove("OK");
+                cont--;
+                timer();
 
                 if (cont <= 0) {
-                    cont = maxCont
-                    document.getElementById("contText").classList.add("OK")
-                    document.getElementById("contText").innerHTML = "PESQUISE"
-                }
-            }, 1000)
+                    cont = maxCont;
+                    document.getElementById("contText").classList.add("OK");
+                    document.getElementById("contText").innerHTML = "PESQUISE";
+                };
+            }, 1000);
 
-        }
+        };
 
     </script>
 </body>
