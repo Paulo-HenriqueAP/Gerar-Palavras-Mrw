@@ -1,8 +1,11 @@
 body {
     margin: 0;
     background-color: black;
-    font-family: monospace;
     user-select: none;
+}
+
+* {
+    font-family: monospace;
 }
 
 button:hover {
@@ -140,12 +143,12 @@ ul {
 #numeros,
 #letras_numeros,
 #alf,
-#comoUsar,
-#tarefas,
-#pal {
+/*#comoUsar,
+#tarefas,*/
+#pal,
+#cont {
     border-radius: 2px;
     width: 100%;
-    font-family: monospace;
     cursor: pointer;
     font-size: x-small;
     border: none;
@@ -171,16 +174,12 @@ ul {
     background-color: aquamarine;
 }
 
-#comoUsar {
+/*#comoUsar {
     background-color: darkgray;
 }
 
 #tarefas {
     background-color: skyblue;
-}
-
-#pal {
-    background-color: #50C878;
 }
 
 #tutoV {
@@ -196,6 +195,10 @@ ul {
     height: max-content;
     min-height: 5%;
 
+}*/
+
+#pal {
+    background-color: #50C878;
 }
 
 .hidden {
@@ -276,6 +279,23 @@ ul {
     }
 
     50% {
-        background-color: firebrick;
+        background-color: steelblue;
     }
+}
+
+#mudar_Array {
+    position: absolute;
+    right: 3%;
+    border: none;
+    background-color: transparent;
+    font-size: small;
+}
+
+#contadorTexto {
+    position: fixed;
+    font-size: x-large;
+    text-align: left;
+    background-color: black;
+    color: white;
+    border-bottom-right-radius: 5px;
 }

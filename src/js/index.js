@@ -1,11 +1,12 @@
 const configuracao = document.getElementById("config");
 
-const words = [
-    "src/txt/br-utf8.txt",
-    "src/txt/english.txt"
-];
+const words = {
+    BR: "src/txt/br-utf8.txt",
+    EN: "src/txt/english.txt",
+    ES: "src/txt/es.txt"
+};
 
-let txt = (words[Math.floor(Math.random() * words.length)]);
+let txt = Object.values(words)[Math.floor(Math.random() * Object.keys(words).length)];
 let espacoPalavraPC = document.getElementById("palavraPC");
 let espacoPalavraMob = document.getElementById("palavraMob");
 let palavraGeradaParaPC = "";
@@ -20,6 +21,7 @@ let vetor = "off";
 let corFundoPC = document.getElementById("telaPC")
 let corFundoMob = document.getElementById("telaMob")
 let arrayTXT;
+let mudarArray = document.getElementById("mudar_Array")
 
 corFundoPC.classList.add("palPcor");
 corFundoMob.classList.add("palMcor");
@@ -59,7 +61,6 @@ function limpar() {
 };
 
 document.getElementById("pal").addEventListener("click", () => {
-    txt = (words[Math.floor(Math.random() * words.length)]);
     fetch(txt)
         .then((res) => res.text())
         .then((data) => {
@@ -67,6 +68,11 @@ document.getElementById("pal").addEventListener("click", () => {
             definirPalavras();
         });
 });
+
+mudarArray.addEventListener("change", function (event) {
+    selecionado = (mudarArray.value)
+    txt = (words[selecionado])
+})
 
 document.getElementById("letras_numeros").addEventListener("click", () => {
     limpar();
@@ -230,21 +236,37 @@ function copiarPalavra(pal) {
     document.body.removeChild(palavraTemp);
 }
 
-function videoTuto() {
+/**
+ function videoTuto() {
     document.getElementById("tutoV").classList.toggle("hidden");
     document.getElementById("fecharTutoV").classList.toggle("hidden");
     document.getElementById("tutoV").setAttribute("src", "https://www.youtube.com/embed/FdQS9uAtY3o?si=HA3_jbbo3UuuWB8x");
 };
 
-function tarefas() {
+ */
+
+/**
+ function tarefas() {
     window.open("listaR.html");
 }
+ */
 
 fetch(txt)
     .then((res) => res.text())
     .then((data) => {
         (arrayTXT = data.split(/\r?\n/));
         definirPalavras();
+        switch (txt) {
+            case "src/txt/br-utf8.txt":
+                mudarArray.value = "BR"
+                break;
+            case "src/txt/english.txt":
+                mudarArray.value = "EN"
+                break;
+            case "src/txt/es.txt":
+                mudarArray.value = "ES"
+                break;
+        }
     });
 
 function definirPalavras() {
@@ -264,4 +286,33 @@ function defMob() {
 
 function defPC() {
     espacoPalavraPC.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)]);
+};
+
+let textCont = document.getElementById("contadorTexto");
+let maxN = 8;
+let nowN = maxN;
+let contando;
+
+function contador() {
+    nowN = maxN;
+    textCont.classList.toggle("hidden");
+    if (textCont.classList.contains("hidden")) {
+        clearTimeout(contando);
+        return;
+    }
+    timer();
+};
+
+function timer() {
+    textCont.textContent = nowN;
+
+    contando = setTimeout(function () {
+        nowN--;
+        timer();
+
+        if (nowN <= 0) {
+            nowN = maxN;
+            textCont.textContent = "✔️";
+        }
+    }, 1000);
 };
