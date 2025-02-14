@@ -36,6 +36,18 @@ button:hover {
     color: #50C878;
 }
 
+
+#telaPC {
+    position: fixed;
+    height: 100%;
+    width: 85%;
+    left: 0%;
+    top: 15px;
+    word-break: break-all;
+    overflow: auto;
+}
+
+
 #palavraPC {
     position: absolute;
     word-wrap: break-word;
@@ -49,16 +61,19 @@ button:hover {
     font-size: xx-large;
 }
 
-#palavraMob {
-    position: absolute;
-    word-wrap: break-word;
-    font-size: medium;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    user-select: text;
-    cursor: text;
-    border: none;
+#stuffs {
+    position: fixed;
+    background-color: black;
+    color: white;
+    width: max-content;
+    text-align: center;
+    right: 0;
+    width: 15%;
+    top: 15px;
+}
+
+#stuffs li {
+    list-style: none;
 }
 
 #copiarPC {
@@ -71,53 +86,6 @@ button:hover {
     box-shadow: 10px 10px 10px 10px black;
 
     height: 100%;
-}
-
-
-#copiarMob {
-    border: none;
-    position: fixed;
-    right: 0%;
-    width: 15%;
-    height: 49%;
-    bottom: 0%;
-    background-color: whitesmoke;
-    box-shadow: 10px 10px 10px 10px black;
-}
-
-/*#telaPC {
-    position: fixed;
-    height: 49.9%;
-    width: 85%;
-    left: 0%;
-    top: 15px;
-    max-height: 49%;
-    word-break: break-all;
-    max-width: 85%;
-    overflow: auto;
-}
-    */
-
-#telaPC {
-    position: fixed;
-    height: 100%;
-    width: 85%;
-    left: 0%;
-    top: 15px;
-    word-break: break-all;
-    overflow: auto;
-}
-
-#telaMob {
-    position: fixed;
-    height: 49%;
-    width: 85%;
-    left: 0%;
-    bottom: 0%;
-    max-height: 49%;
-    word-break: break-all;
-    max-width: 85%;
-    overflow: auto;
 }
 
 #config {
@@ -189,29 +157,6 @@ ul {
     background-color: aquamarine;
 }
 
-/*#comoUsar {
-    background-color: darkgray;
-}
-
-#tarefas {
-    background-color: skyblue;
-}
-
-#tutoV {
-    position: absolute;
-    width: 100%;
-    height: 95%;
-    bottom: 0;
-}
-
-#fecharTutoV {
-    position: absolute;
-    width: 100%;
-    height: max-content;
-    min-height: 5%;
-
-}*/
-
 #pal {
     background-color: #50C878;
 }
@@ -221,8 +166,7 @@ ul {
 }
 
 
-#Qp,
-#Qm {
+#Qp {
     font-size: xx-small;
     width: 55px;
     border: none;
@@ -263,6 +207,39 @@ ul {
     background-color: #50C878;
 }
 
+
+
+@keyframes start {
+    0% {
+        background-color: black;
+    }
+
+    50% {
+        background-color: steelblue;
+    }
+}
+
+#mudar_Array {
+    position: absolute;
+    right: 3%;
+    border: none;
+    background-color: transparent;
+    font-size: small;
+}
+
+/*
+#palavraMob {
+    position: absolute;
+    word-wrap: break-word;
+    font-size: medium;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    user-select: text;
+    cursor: text;
+    border: none;
+}
+
 .letrasNumerosMCor {
     background-color: steelblue;
 }
@@ -288,40 +265,50 @@ ul {
     background-color: whitesmoke;
 }
 
-@keyframes start {
-    0% {
-        background-color: black;
-    }
-
-    50% {
-        background-color: steelblue;
-    }
+#comoUsar {
+    background-color: darkgray;
 }
 
-#mudar_Array {
+#tarefas {
+    background-color: skyblue;
+}
+
+#tutoV {
     position: absolute;
-    right: 3%;
-    border: none;
-    background-color: transparent;
-    font-size: small;
+    width: 100%;
+    height: 95%;
+    bottom: 0;
 }
 
-#stuffs {
-    position: fixed;
-    background-color: #50C878;
-    width: max-content;
+#fecharTutoV {
+    position: absolute;
+    width: 100%;
     height: max-content;
-    position: fixed;
-    background-color: black;
-    color: white;
-    border-bottom-right-radius: 6px;
-    width: max-content;
-    text-align: center;
-    right: 0;
-    width: 15%;
-    top: 15px;
+    min-height: 5%;
+
 }
 
-#stuffs li {
-    list-style: none;
+#copiarMob {
+    border: none;
+    position: fixed;
+    right: 0%;
+    width: 15%;
+    height: 49%;
+    bottom: 0%;
+    background-color: whitesmoke;
+    box-shadow: 10px 10px 10px 10px black;
 }
+
+#telaMob {
+    position: fixed;
+    height: 49%;
+    width: 85%;
+    left: 0%;
+    bottom: 0%;
+    max-height: 49%;
+    word-break: break-all;
+    max-width: 85%;
+    overflow: auto;
+}
+
+*/
