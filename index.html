@@ -12,18 +12,19 @@
 <body>
     <div id="telaPC" class="corP">
         <button id="palavraPC"></button>
-        <button id="copiarPC">⧉ 🖥️</button>
+        <button id="copiarPC">⧉</button>
     </div>
 
     <button id="config">☰</button>
 
-    <div id="telaMob" class="corM">
+    <!--<div id="telaMob" class="corM">
         <button id="palavraMob"></button>
         <button id="copiarMob">⧉ 📱</button>
     </div>
+-->
     <ul id="configLista" class="hidden">
         ⚞somente⚟
-        <li><Button id="pal">palavras</Button>
+        <li><Button id="pal" onclick="changeArray()">palavras</Button>
             <select id="mudar_Array">
                 <option value="BR">BR</option>
                 <option value="EN">EN</option>
@@ -39,11 +40,19 @@
         <!-- <li><button id="tarefas" onclick="tarefas()">tarefas</button></li>-->
         <!--<li><button id="comoUsar" onclick="videoTuto()">como usar</button></li>-->
         <input id="Qp" placeholder="quant PC" onchange="numeroTrocadoPC()" type="number" min="0">
-        <input id="Qm" placeholder="quant MB" onchange="numeroTrocadoMob()" type="number" min="0">
+        <!-- <input id="Qm" placeholder="quant MB" onchange="numeroTrocadoMob()" type="number" min="0">-->
+        <!--<li style="background-color: #00A4EF; border-radius: 3px; text-decoration: none;"><a href="https://www.bing.com/" target="_blank" rel="noopener noreferrer">Bing</a></li>-->
     </ul>
 
     <span id="AP" class="APl">ΛP</span>
-    <span id="contadorTexto" class="hidden">8</span>
+
+    <div id="stuffs" class="hidden">
+        <li id="contadorTexto" class="hidden" style="font-size: x-large;">8</li>
+        <li style="color: grey;">PC&nbsp;&nbsp;: 30</li>
+        <li style="color: grey;">MOB : 20</li>
+        <li style="font-size: large;" id="done">✓ 0</li>
+    </div>
+
 
     <!--
     <iframe id="tutoV" src="" class="hidden" title="YouTube video player" frameborder="0"

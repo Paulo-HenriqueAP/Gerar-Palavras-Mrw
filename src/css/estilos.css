@@ -2,6 +2,7 @@ body {
     margin: 0;
     background-color: black;
     user-select: none;
+    padding: 0;
 }
 
 * {
@@ -45,6 +46,7 @@ button:hover {
     user-select: text;
     cursor: text;
     border: none;
+    font-size: xx-large;
 }
 
 #palavraMob {
@@ -67,7 +69,10 @@ button:hover {
     height: 49%;
     background-color: darkgrey;
     box-shadow: 10px 10px 10px 10px black;
+
+    height: 100%;
 }
+
 
 #copiarMob {
     border: none;
@@ -80,7 +85,7 @@ button:hover {
     box-shadow: 10px 10px 10px 10px black;
 }
 
-#telaPC {
+/*#telaPC {
     position: fixed;
     height: 49.9%;
     width: 85%;
@@ -89,6 +94,17 @@ button:hover {
     max-height: 49%;
     word-break: break-all;
     max-width: 85%;
+    overflow: auto;
+}
+    */
+
+#telaPC {
+    position: fixed;
+    height: 100%;
+    width: 85%;
+    left: 0%;
+    top: 15px;
+    word-break: break-all;
     overflow: auto;
 }
 
@@ -114,7 +130,6 @@ button:hover {
     font-size: X-small;
     top: 0;
     height: 15px;
-
     animation-duration: 5s;
     animation-name: start;
 }
@@ -291,11 +306,22 @@ ul {
     font-size: small;
 }
 
-#contadorTexto {
+#stuffs {
     position: fixed;
-    font-size: x-large;
-    text-align: left;
+    background-color: #50C878;
+    width: max-content;
+    height: max-content;
+    position: fixed;
     background-color: black;
     color: white;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 6px;
+    width: max-content;
+    text-align: center;
+    right: 0;
+    width: 15%;
+    top: 15px;
+}
+
+#stuffs li {
+    list-style: none;
 }

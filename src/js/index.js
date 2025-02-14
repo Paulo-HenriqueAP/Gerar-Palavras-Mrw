@@ -8,78 +8,80 @@ const words = {
 
 let txt = Object.values(words)[Math.floor(Math.random() * Object.keys(words).length)];
 let espacoPalavraPC = document.getElementById("palavraPC");
-let espacoPalavraMob = document.getElementById("palavraMob");
+//let espacoPalavraMob = document.getElementById("palavraMob");
 let palavraGeradaParaPC = "";
 let palavraGeradaParaMobile = "";
-let copiarMobile = document.getElementById("copiarMob");
+//let copiarMobile = document.getElementById("copiarMob");
 let copiarComputador = document.getElementById("copiarPC");
 let numeroP = "";
 let numeroM = "";
 let cont = 0;
-let contM = 0
+//let contM = 0
 let vetor = "off";
 let corFundoPC = document.getElementById("telaPC")
-let corFundoMob = document.getElementById("telaMob")
+//let corFundoMob = document.getElementById("telaMob")
 let arrayTXT;
 let mudarArray = document.getElementById("mudar_Array")
+let done = 0;
 
 corFundoPC.classList.add("palPcor");
-corFundoMob.classList.add("palMcor");
+//corFundoMob.classList.add("palMcor");
 
 function definirCaractereAleatorio() {
     cont++;
-    contM++;
+    //contM++;
     cta = (vetor[(Math.floor(Math.random() * vetor.length))]);
 };
 
 function limpar() {
     espacoPalavraPC.textContent = "";
-    espacoPalavraMob.textContent = "";
+    //espacoPalavraMob.textContent = "";
     document.getElementById("AP").classList.remove("APc")
     copiarComputador.style = " background-color: darkgray;"
-    copiarMobile.style = "background-color: whitesmoke;";
+    //copiarMobile.style = "background-color: whitesmoke;";
     document.getElementById("Qp").value = "";
-    document.getElementById("Qm").value = "";
+    //document.getElementById("Qm").value = "";
     numeroP = 30;
-    numeroM = 20;
+    //numeroM = 20;
     cont = 0;
-    contM = 0;
+    //contM = 0;
     corFundoPC.classList.remove("letrasPCor");
-    corFundoMob.classList.remove("letrasMCor");
+    //corFundoMob.classList.remove("letrasMCor");
     corFundoPC.classList.remove("numerosPCor");
-    corFundoMob.classList.remove("numerosMCor");
+    //corFundoMob.classList.remove("numerosMCor");
     corFundoPC.classList.remove("letrasNumerosPCor");
-    corFundoMob.classList.remove("letrasNumerosMCor");
+    //corFundoMob.classList.remove("letrasNumerosMCor");
     corFundoPC.classList.remove("diversosPCor");
-    corFundoMob.classList.remove("diversosMCor");
+    //corFundoMob.classList.remove("diversosMCor");
     corFundoPC.classList.remove("alfabetosPCor");
-    corFundoMob.classList.remove("alfabetosMCor");
+    //corFundoMob.classList.remove("alfabetosMCor");
     corFundoPC.classList.remove("palPcor");
-    corFundoMob.classList.remove("palMcor");
+    //corFundoMob.classList.remove("palMcor");
     document.getElementById("Qp").classList.remove("bloquear");
-    document.getElementById("Qm").classList.remove("bloquear");
+    //document.getElementById("Qm").classList.remove("bloquear");
 };
 
-document.getElementById("pal").addEventListener("click", () => {
+function changeArray() {
     fetch(txt)
         .then((res) => res.text())
         .then((data) => {
             (arrayTXT = data.split(/\r?\n/));
             definirPalavras();
         });
-});
+}
 
 mudarArray.addEventListener("change", function (event) {
     selecionado = (mudarArray.value)
     txt = (words[selecionado])
+    changeArray()
 })
 
 document.getElementById("letras_numeros").addEventListener("click", () => {
     limpar();
     corFundoPC.classList.add("letrasNumerosPCor");
-    corFundoMob.classList.add("letrasNumerosMCor");
+    //corFundoMob.classList.add("letrasNumerosMCor");
     vetor = letras_E_numeros;
-    definirMob();
+    //definirMob();
     cont = 0;
     definirPC();
 });
@@ -87,9 +89,9 @@ document.getElementById("letras_numeros").addEventListener("click", () => {
 document.getElementById("letras").addEventListener("click", () => {
     limpar();
     corFundoPC.classList.add("letrasPCor");
-    corFundoMob.classList.add("letrasMCor");
+    //corFundoMob.classList.add("letrasMCor");
     vetor = letras;
-    definirMob();
+    //definirMob();
     cont = 0;
     definirPC();
 });
@@ -97,9 +99,9 @@ document.getElementById("letras").addEventListener("click", () => {
 document.getElementById("numeros").addEventListener("click", () => {
     limpar();
     corFundoPC.classList.add("numerosPCor");
-    corFundoMob.classList.add("numerosMCor");
+    //corFundoMob.classList.add("numerosMCor");
     vetor = numeros;
-    definirMob();
+    //definirMob();
     cont = 0;
     definirPC();
 });
@@ -107,9 +109,9 @@ document.getElementById("numeros").addEventListener("click", () => {
 document.getElementById("diversos").addEventListener("click", () => {
     limpar();
     corFundoPC.classList.add("diversosPCor");
-    corFundoMob.classList.add("diversosMCor");
+    //corFundoMob.classList.add("diversosMCor");
     vetor = caracteres;
-    definirMob();
+    //definirMob();
     cont = 0;
     definirPC();
 });
@@ -117,9 +119,9 @@ document.getElementById("diversos").addEventListener("click", () => {
 document.getElementById("alf").addEventListener("click", () => {
     limpar();
     corFundoPC.classList.add("alfabetosPCor");
-    corFundoMob.classList.add("alfabetosMCor");
+    //corFundoMob.classList.add("alfabetosMCor");
     vetor = alfabetosPlus;
-    definirMob();
+    //definirMob();
     cont = 0;
     definirPC();
 })
@@ -139,10 +141,10 @@ function numeroTrocadoPC() {
     definirPC();
 };
 
-function numeroTrocadoMob() {
+/*function numeroTrocadoMob() {
     contM = 0;
     espacoPalavraMob.textContent = "";
-    copiarMobile.style = "background-color: whitesmoke;";
+    //copiarMobile.style = "background-color: whitesmoke;";
     numeroM = document.getElementById("Qm").value;
     switch (document.getElementById("Qm").value) {
         case "":
@@ -151,6 +153,7 @@ function numeroTrocadoMob() {
     }
     definirMob();
 };
+*/
 
 configuracao.addEventListener("click", () => {
     if (configuracao.textContent === "☰") {
@@ -169,22 +172,35 @@ function definirPC() {
     };
 };
 
-function definirMob() {
+/*function definirMob() {
     while (contM < numeroM) {
         definirCaractereAleatorio();
         espacoPalavraMob.textContent += cta;
     };
 };
+*/
 
 copiarComputador.addEventListener("click", function () {
-    palavraGeradaParaPC = espacoPalavraPC.textContent;
-    copiarPalavra(palavraGeradaParaPC);
-    copiarComputador.textContent = "Copiado!";
-    copiarComputador.style = "background-color: #50C878; font-size: xx-small;";
+    try {
+        palavraGeradaParaPC = espacoPalavraPC.textContent;
+        copiarPalavra(palavraGeradaParaPC);
+    }
+    catch (problem) {
+        copiarComputador.textContent = "💀";
+        espacoPalavraPC.textContent = problem + ":<";
+        setTimeout(function () {
+            location.reload()
+        }, 1000)
+        return;
+    }
+
+    copiarComputador.style = "background-color: #50C878; font-size: xx-large;";
     document.getElementById("AP").classList.add("APc");
     document.getElementById("configLista").classList.add("bloquear");
+    copiarComputador.textContent = ":>";
     setTimeout(function () {
-        copiarComputador.textContent = "⧉ 🖥️";
+        //copiarComputador.textContent = "⧉ 🖥️";
+        copiarComputador.textContent = "⧉";
         copiarComputador.style = "background-color: #50C878; font-size: small;";
         document.getElementById("configLista").classList.remove("bloquear");
 
@@ -199,10 +215,12 @@ copiarComputador.addEventListener("click", function () {
         }
         document.getElementById("AP").classList.remove("APc")
         copiarComputador.style = " background-color: darkgray;"
-    }, 2000);
+        done++
+        document.getElementById("done").textContent = "✓ " + done;
+    }, 200);
 });
 
-copiarMobile.addEventListener("click", function () {
+/*copiarMobile.addEventListener("click", function () {
     palavraGeradaParaMobile = espacoPalavraMob.textContent;
     copiarPalavra(palavraGeradaParaMobile);
     copiarMobile.textContent = "Copiado!";
@@ -226,6 +244,7 @@ copiarMobile.addEventListener("click", function () {
         copiarMobile.style = "background-color: whitesmoke;";
     }, 2000);
 });
+*/
 
 function copiarPalavra(pal) {
     let palavraTemp = document.createElement("input");
@@ -272,17 +291,18 @@ fetch(txt)
 function definirPalavras() {
     limpar();
     document.getElementById("Qp").classList.add("bloquear");
-    document.getElementById("Qm").classList.add("bloquear");
+    //document.getElementById("Qm").classList.add("bloquear");
     vetor = "off";
     corFundoPC.classList.add("palPcor");
-    corFundoMob.classList.add("palMcor");
-    defMob();
+    //corFundoMob.classList.add("palMcor");
+    //defMob();
     defPC();
 };
 
-function defMob() {
+/*function defMob() {
     espacoPalavraMob.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)]);
 };
+*/
 
 function defPC() {
     espacoPalavraPC.textContent = (arrayTXT[Math.floor(Math.random() * arrayTXT.length)]);
@@ -293,23 +313,19 @@ let maxN = 8;
 let nowN = maxN;
 let contando;
 
+contador()
 function contador() {
     nowN = maxN;
     textCont.classList.toggle("hidden");
+    document.getElementById("stuffs").classList.toggle("hidden")
     if (textCont.classList.contains("hidden")) {
-        clearTimeout(contando);
+        clearInterval(contando);
+        document.getElementById("stuffs").classList.add("hidden")
         return;
     }
-    timer();
-};
-
-function timer() {
-    textCont.textContent = nowN;
-
-    contando = setTimeout(function () {
+    contando = setInterval(function () {
         nowN--;
-        timer();
-
+        textCont.textContent = nowN;
         if (nowN <= 0) {
             nowN = maxN;
             textCont.textContent = "✔️";
